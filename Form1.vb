@@ -6,10 +6,12 @@
         btnYes.Visible = False
         lblVictory.Visible = False
     End Sub
-    Dim guess As Integer
+    Dim intGuess As Integer
+    Dim strDate As String
+    Dim strTime As String
     Private Sub Getnumber()
 
-        guess = Math.Ceiling(Rnd() * 100)
+        intGuess = Math.Ceiling(Rnd() * 100)
 
     End Sub
     Private Sub Label1_Click(sender As Object, e As EventArgs)
@@ -19,11 +21,11 @@
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
 
         Select Case (Val(txtGuess.Text))
-            Case Is > guess
+            Case Is > intGuess
                 MsgBox("Too High")
-            Case Is < guess
+            Case Is < intGuess
                 MsgBox("Too Low")
-            Case Is = guess
+            Case Is = intGuess
                 MsgBox("Thats correct!")
                 txtGuess.Visible = False
                 btnStart.Visible = False
@@ -32,6 +34,11 @@
                 lblVictory.Visible = True
         End Select
 
+        strDate = Today
+        strTime = TimeOfDay
+        lblGuessDate.Text = Today
+        lblGuessTime.Text = TimeOfDay
+        lblGuess.Text = txtGuess.Text
         txtGuess.Text = ""
 
     End Sub
@@ -47,5 +54,9 @@
         btnNo.Visible = False
         btnYes.Visible = False
         lblVictory.Visible = False
+    End Sub
+
+    Private Sub lblGuessDate_Click(sender As Object, e As EventArgs) Handles lblGuessDate.Click
+
     End Sub
 End Class
