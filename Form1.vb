@@ -1,4 +1,9 @@
-﻿Public Class Form1
+﻿Imports System.Data.SqlClient
+Imports Microsoft.SqlServer
+Public Class Form1
+
+    Dim con As New SqlConnection("Server=LocalHost;Database=NumberGame;Integrated Security=true")
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Randomize()
         Getnumber()
@@ -6,12 +11,15 @@
         btnYes.Visible = False
         lblVictory.Visible = False
     End Sub
+    Dim intAnswer As Integer
     Dim intGuess As Integer
-    Dim strDate As String
-    Dim strTime As String
+    Dim stDate As String
+    Dim stTime As String
+    Dim stResult As String
+
     Private Sub Getnumber()
 
-        intGuess = Math.Ceiling(Rnd() * 100)
+        intAnswer = Math.Ceiling(Rnd() * 100)
 
     End Sub
     Private Sub Label1_Click(sender As Object, e As EventArgs)
@@ -21,12 +29,15 @@
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
 
         Select Case (Val(txtGuess.Text))
-            Case Is > intGuess
+            Case Is > intAnswer
                 MsgBox("Too High")
-            Case Is < intGuess
+                stResult = "Too High"
+            Case Is < intAnswer
                 MsgBox("Too Low")
-            Case Is = intGuess
+                stResult = "Too Low"
+            Case Is = intAnswer
                 MsgBox("Thats correct!")
+                stResult = "Correct"
                 txtGuess.Visible = False
                 btnStart.Visible = False
                 btnNo.Visible = True
@@ -34,12 +45,24 @@
                 lblVictory.Visible = True
         End Select
 
-        strDate = Today
-        strTime = TimeOfDay
+        intGuess = txtGuess.Text
+        stDate = Today
+        stTime = TimeOfDay
         lblGuessDate.Text = Today
         lblGuessTime.Text = TimeOfDay
         lblGuess.Text = txtGuess.Text
         txtGuess.Text = ""
+
+
+        con.Open()
+
+        Dim InsertCmd = "Insert Into UserGuessHistory Values('" & 5 & "' , '" & intGuess & "' , '" & stResult & "' , '" & intAnswer & "' , '" & stDate & "' , '" & stTime & "')"
+
+        Dim cmd As New SqlCommand(InsertCmd, con)
+
+        cmd.ExecuteNonQuery()
+
+        con.Close()
 
     End Sub
 
