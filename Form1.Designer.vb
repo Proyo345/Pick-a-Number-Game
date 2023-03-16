@@ -22,123 +22,87 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnStart = New System.Windows.Forms.Button()
-        Me.txtGuess = New System.Windows.Forms.TextBox()
-        Me.btnNo = New System.Windows.Forms.Button()
-        Me.btnYes = New System.Windows.Forms.Button()
-        Me.lblVictory = New System.Windows.Forms.Label()
-        Me.lblGuessDate = New System.Windows.Forms.Label()
-        Me.lblGuessTime = New System.Windows.Forms.Label()
-        Me.lbl1 = New System.Windows.Forms.Label()
-        Me.lblGuess = New System.Windows.Forms.Label()
+        Me.btnSubmit = New System.Windows.Forms.Button()
+        Me.lblUsername = New System.Windows.Forms.Label()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.lblPassword = New System.Windows.Forms.Label()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.lblIncorrect = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'btnStart
+        'btnSubmit
         '
-        Me.btnStart.Location = New System.Drawing.Point(293, 237)
-        Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(199, 91)
-        Me.btnStart.TabIndex = 1
-        Me.btnStart.Text = "Start"
-        Me.btnStart.UseVisualStyleBackColor = True
+        Me.btnSubmit.Location = New System.Drawing.Point(352, 252)
+        Me.btnSubmit.Name = "btnSubmit"
+        Me.btnSubmit.Size = New System.Drawing.Size(75, 23)
+        Me.btnSubmit.TabIndex = 0
+        Me.btnSubmit.Text = "Submit"
+        Me.btnSubmit.UseVisualStyleBackColor = True
         '
-        'txtGuess
+        'lblUsername
         '
-        Me.txtGuess.Location = New System.Drawing.Point(296, 173)
-        Me.txtGuess.Name = "txtGuess"
-        Me.txtGuess.Size = New System.Drawing.Size(196, 23)
-        Me.txtGuess.TabIndex = 2
+        Me.lblUsername.AutoSize = True
+        Me.lblUsername.Location = New System.Drawing.Point(228, 134)
+        Me.lblUsername.Name = "lblUsername"
+        Me.lblUsername.Size = New System.Drawing.Size(60, 15)
+        Me.lblUsername.TabIndex = 1
+        Me.lblUsername.Text = "Username"
         '
-        'btnNo
+        'txtUsername
         '
-        Me.btnNo.Location = New System.Drawing.Point(223, 244)
-        Me.btnNo.Name = "btnNo"
-        Me.btnNo.Size = New System.Drawing.Size(145, 78)
-        Me.btnNo.TabIndex = 3
-        Me.btnNo.Text = "No"
-        Me.btnNo.UseVisualStyleBackColor = True
+        Me.txtUsername.Location = New System.Drawing.Point(316, 131)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(148, 23)
+        Me.txtUsername.TabIndex = 2
         '
-        'btnYes
+        'lblPassword
         '
-        Me.btnYes.Location = New System.Drawing.Point(412, 242)
-        Me.btnYes.Name = "btnYes"
-        Me.btnYes.Size = New System.Drawing.Size(164, 80)
-        Me.btnYes.TabIndex = 4
-        Me.btnYes.Text = "Yes"
-        Me.btnYes.UseVisualStyleBackColor = True
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.Location = New System.Drawing.Point(231, 170)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(57, 15)
+        Me.lblPassword.TabIndex = 3
+        Me.lblPassword.Text = "Password"
         '
-        'lblVictory
+        'txtPassword
         '
-        Me.lblVictory.AutoSize = True
-        Me.lblVictory.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.lblVictory.Location = New System.Drawing.Point(223, 187)
-        Me.lblVictory.Name = "lblVictory"
-        Me.lblVictory.Size = New System.Drawing.Size(330, 32)
-        Me.lblVictory.TabIndex = 5
-        Me.lblVictory.Text = "Would you like to play again?"
+        Me.txtPassword.Location = New System.Drawing.Point(316, 167)
+        Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.Size = New System.Drawing.Size(148, 23)
+        Me.txtPassword.TabIndex = 4
         '
-        'lblGuessDate
+        'lblIncorrect
         '
-        Me.lblGuessDate.AutoSize = True
-        Me.lblGuessDate.Location = New System.Drawing.Point(31, 90)
-        Me.lblGuessDate.Name = "lblGuessDate"
-        Me.lblGuessDate.Size = New System.Drawing.Size(0, 15)
-        Me.lblGuessDate.TabIndex = 6
-        '
-        'lblGuessTime
-        '
-        Me.lblGuessTime.AutoSize = True
-        Me.lblGuessTime.Location = New System.Drawing.Point(96, 90)
-        Me.lblGuessTime.Name = "lblGuessTime"
-        Me.lblGuessTime.Size = New System.Drawing.Size(0, 15)
-        Me.lblGuessTime.TabIndex = 7
-        Me.lblGuessTime.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'lbl1
-        '
-        Me.lbl1.AutoSize = True
-        Me.lbl1.Location = New System.Drawing.Point(31, 30)
-        Me.lbl1.Name = "lbl1"
-        Me.lbl1.Size = New System.Drawing.Size(106, 15)
-        Me.lbl1.TabIndex = 8
-        Me.lbl1.Text = "Most recent guess:"
-        '
-        'lblGuess
-        '
-        Me.lblGuess.AutoSize = True
-        Me.lblGuess.Location = New System.Drawing.Point(62, 55)
-        Me.lblGuess.Name = "lblGuess"
-        Me.lblGuess.Size = New System.Drawing.Size(0, 15)
-        Me.lblGuess.TabIndex = 9
-        Me.lblGuess.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lblIncorrect.AutoSize = True
+        Me.lblIncorrect.ForeColor = System.Drawing.Color.Red
+        Me.lblIncorrect.Location = New System.Drawing.Point(301, 221)
+        Me.lblIncorrect.Name = "lblIncorrect"
+        Me.lblIncorrect.Size = New System.Drawing.Size(188, 15)
+        Me.lblIncorrect.TabIndex = 5
+        Me.lblIncorrect.Text = "Username or Password is Incorrect"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(809, 481)
-        Me.Controls.Add(Me.lblGuess)
-        Me.Controls.Add(Me.lbl1)
-        Me.Controls.Add(Me.lblGuessTime)
-        Me.Controls.Add(Me.lblGuessDate)
-        Me.Controls.Add(Me.lblVictory)
-        Me.Controls.Add(Me.btnYes)
-        Me.Controls.Add(Me.btnNo)
-        Me.Controls.Add(Me.txtGuess)
-        Me.Controls.Add(Me.btnStart)
+        Me.Controls.Add(Me.lblIncorrect)
+        Me.Controls.Add(Me.txtPassword)
+        Me.Controls.Add(Me.lblPassword)
+        Me.Controls.Add(Me.txtUsername)
+        Me.Controls.Add(Me.lblUsername)
+        Me.Controls.Add(Me.btnSubmit)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnStart As Button
-    Friend WithEvents txtGuess As TextBox
-    Friend WithEvents btnNo As Button
-    Friend WithEvents btnYes As Button
-    Friend WithEvents lblVictory As Label
-    Friend WithEvents lblGuessDate As Label
-    Friend WithEvents lblGuessTime As Label
-    Friend WithEvents lbl1 As Label
-    Friend WithEvents lblGuess As Label
+
+    Friend WithEvents btnSubmit As Button
+    Friend WithEvents lblUsername As Label
+    Friend WithEvents txtUsername As TextBox
+    Friend WithEvents lblPassword As Label
+    Friend WithEvents txtPassword As TextBox
+    Friend WithEvents lblIncorrect As Label
 End Class
