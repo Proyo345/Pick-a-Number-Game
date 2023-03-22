@@ -28,6 +28,8 @@ Partial Class Form1
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.lblIncorrect = New System.Windows.Forms.Label()
+        Me.txtSQLPass = New System.Windows.Forms.TextBox()
+        Me.btnNewAccout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSubmit
@@ -81,11 +83,29 @@ Partial Class Form1
         Me.lblIncorrect.TabIndex = 5
         Me.lblIncorrect.Text = "Username or Password is Incorrect"
         '
+        'txtSQLPass
+        '
+        Me.txtSQLPass.Location = New System.Drawing.Point(63, 327)
+        Me.txtSQLPass.Name = "txtSQLPass"
+        Me.txtSQLPass.Size = New System.Drawing.Size(135, 23)
+        Me.txtSQLPass.TabIndex = 6
+        '
+        'btnNewAccout
+        '
+        Me.btnNewAccout.Location = New System.Drawing.Point(600, 152)
+        Me.btnNewAccout.Name = "btnNewAccout"
+        Me.btnNewAccout.Size = New System.Drawing.Size(140, 23)
+        Me.btnNewAccout.TabIndex = 7
+        Me.btnNewAccout.Text = "Create New Account"
+        Me.btnNewAccout.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(809, 481)
+        Me.Controls.Add(Me.btnNewAccout)
+        Me.Controls.Add(Me.txtSQLPass)
         Me.Controls.Add(Me.lblIncorrect)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.lblPassword)
@@ -105,4 +125,6 @@ Partial Class Form1
     Friend WithEvents lblPassword As Label
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents lblIncorrect As Label
+    Friend WithEvents txtSQLPass As TextBox
+    Friend WithEvents btnNewAccout As Button
 End Class

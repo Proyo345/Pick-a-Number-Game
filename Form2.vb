@@ -56,7 +56,7 @@ Public Class Form2
 
         con.Open()
 
-        Dim InsertCmd = "Insert Into UserGuessHistory Values('" & 5 & "' , '" & intGuess & "' , '" & stResult & "' , '" & intAnswer & "' , '" & stDate & "' , '" & stTime & "')"
+        Dim InsertCmd = "Insert Into UserGuessHistory (Guess, Result, CorrectAnswer, GuessDate, GuessTime) Values('" & intGuess & "' , '" & stResult & "' , '" & intAnswer & "' , '" & stDate & "' , '" & stTime & "')"
 
         Dim cmd As New SqlCommand(InsertCmd, con)
 
